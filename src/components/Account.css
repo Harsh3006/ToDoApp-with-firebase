@@ -1,0 +1,259 @@
+.img-box img {
+  width: 100%;
+  height: 100%;
+}
+
+section {
+  position: relative;
+  height: 100vh;
+  background-color: var(--lightblue);
+  transition: 0.5s;
+}
+
+section.active {
+  background-color: var(--lightpink);
+}
+
+section .container {
+  position: relative;
+  width: 900px;
+  height: 500px;
+  background-color: white;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+section .user {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+section .img-box {
+  position: relative;
+  width: 50%;
+  height: 100%;
+  transition: all 500ms ease-in-out;
+}
+
+section .img-box img {
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+section .form-box {
+  padding: 0 15px;
+  position: relative;
+  width: 50%;
+  height: 100%;
+  background-color: white;
+  transition: 500ms ease-in-out;
+}
+
+span.link {
+  font-size: 13px;
+  cursor: pointer;
+}
+.login span.link {
+  color: var(--blue);
+}
+.signup span.link {
+  color: var(--pink);
+}
+section .form {
+  width: 100%;
+  max-width: 300px;
+}
+
+section .input-field {
+  position: relative;
+  margin-bottom: 10px;
+}
+section .input-field label {
+  font-size: 13px;
+  cursor: pointer;
+  font-weight: 600;
+}
+section .input-field input {
+  border: 1px solid #ddd;
+}
+section .form .form-control .input-field i {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  cursor: pointer;
+  transform: translate(50%, -50%);
+}
+
+section .form .form-control button[type="submit"] {
+  display: block;
+  width: 100%;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  color: white;
+  font-size: 18px;
+  margin: 20px 0 10px 0;
+}
+section .login .form .form-control button[type="submit"] {
+  background-color: var(--blue);
+}
+section .signup .form .form-control button[type="submit"] {
+  background-color: var(--pink);
+}
+section .form .form-control:first-child h2 {
+  margin-bottom: 0;
+}
+section .form .form-control:first-child p {
+  font-size: 15px;
+}
+
+section .form .form-control:last-child {
+  text-align: center;
+}
+
+section .form .form-control:last-child p {
+  position: relative;
+  display: inline-block;
+  font-size: 13px;
+  margin-bottom: 0;
+}
+
+section .form .form-control p:first-child::before,
+section .form .form-control p:first-child::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 1px;
+  background-color: var(--black);
+}
+section .form .form-control p:first-child::before {
+  left: -50px;
+}
+section .form .form-control p:first-child::after {
+  right: -50px;
+}
+section .form .form-control .icons {
+  margin: 10px 0 20px 0;
+}
+section .form .form-control .icons button {
+  width: 100%;
+  border: 1px solid var(--black);
+  background: none;
+  outline: none;
+  color: var(--black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+section .form .form-control .icons button img {
+  width: 25px;
+}
+/* Functionality */
+section .container .signup {
+  pointer-events: none;
+}
+
+section.active .container .signup {
+  pointer-events: initial;
+}
+
+section .container .signup .form-box {
+  top: 100%;
+}
+
+section.active .container .signup .form-box {
+  top: 0;
+}
+
+section .container .signup .img-box {
+  top: -100%;
+}
+
+section.active .container .signup .img-box {
+  top: 0;
+}
+
+section .container .login .form-box {
+  top: 0;
+}
+
+section .container.active .login .form-box {
+  top: 100%;
+}
+
+section .container .login .img-box {
+  top: 0;
+}
+
+section .container.active .login .img-box {
+  top: -100%;
+}
+
+.forgot-password {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(51, 51, 51, 0.5);
+  padding: 25px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: 0.5s ease-in;
+}
+.forgot-password.active{
+  opacity: 1;
+  visibility: visible;
+  pointer-events: initial;
+}
+.reset-container {
+  position: relative;
+  width: 500px;
+  height: 300px;
+  background: white;
+  padding: 25px;
+  flex-direction: column;
+}
+.reset-container .fa-xmark{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+}
+@media (max-width: 996px) {
+  section .container {
+    max-width: 720px;
+  }
+}
+@media (max-width: 768px) {
+  section .container {
+    max-width: 540px;
+  }
+  section .container .img-box {
+    display: none;
+  }
+
+  section .container .form-box {
+    width: 100%;
+  }
+
+  section .container.active .login .form-box {
+    top: -100%;
+  }
+}
+
+@media (max-width: 567px) {
+  section {
+    padding: 0 30px;
+  }
+}
